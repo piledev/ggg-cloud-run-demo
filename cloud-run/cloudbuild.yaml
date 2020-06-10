@@ -4,7 +4,7 @@ steps:
   args: [
         'build', 
         '-t', 'gcr.io/${_PROJECT_ID}/${_SERVICE_NAME}', 
-        '-f', 'Dockerfile', 
+        '-f', 'cloud-run/Dockerfile', 
         '.'
         ]
 
