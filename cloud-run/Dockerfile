@@ -7,7 +7,7 @@ FROM golang:latest as builder
 WORKDIR /app
 
 # Copy local code to the container image.
-COPY . ./
+COPY ./cloud-run ./
 
 # Build the binary.
 RUN go test
