@@ -1,6 +1,6 @@
 steps:
 # test go
-- name: 'golang:1.14.2-alpine3.12'
+- name: 'gcr.io/cloud-builders/go:alpine'
   args: [
        'test','-v','.'
         ]
