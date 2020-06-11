@@ -1,9 +1,9 @@
 steps:
 # test go
-# - name: 'gcr.io/cloud-builders/go:alpine'
-#   args: [
-#        'test'
-#         ]
+- name: 'gcr.io/cloud-builders/go:alpine'
+  args: [
+       'test'
+        ]
 
 # build the container image
 - name: 'gcr.io/cloud-builders/docker'
