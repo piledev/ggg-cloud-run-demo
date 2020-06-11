@@ -2,7 +2,7 @@ steps:
 # test go
 - name: 'gcr.io/cloud-builders/go:alpine'
   args: [
-       'test','-v','.'
+       'test'
         ]
 
   # build the container image
