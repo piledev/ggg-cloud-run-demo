@@ -1,0 +1,23 @@
+steps:
+# test go
+- name: 'golang:1.14.2-alpine3.12'
+  args: [
+       'test','-v','.'
+        ]
+
+  # build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+        'build', 
+        '-t', 'gcr.io/${_PROJECT_ID}/${_SERVICE_NAME}', 
+        '-f', 'Dockerfile', 
+        '.'
+        ]
+
+# push the container image to container registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/${_PROJECT_ID}/${_SERVICE_NAME}']
+
+substitutions:
+    _PROJECT_ID: ggg-cloud-run-demo
+    _SERVICE_NAME: helloworld
