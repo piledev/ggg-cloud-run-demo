@@ -5,7 +5,7 @@ steps:
 #        'test'
 #         ]
 
-  # build the container image
+# build the container image
 - name: 'gcr.io/cloud-builders/docker'
   args: [
         'build', 
