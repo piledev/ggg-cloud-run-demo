@@ -1,5 +1,5 @@
 # FROM golang:1.14.4-alpine3.12 as builder
-FROM golang:1.14.4 as builder
+FROM golang:1.14.4-alpine3.12 as builder
 
 # Create and change to the app directory.
 WORKDIR /app
@@ -15,8 +15,9 @@ RUN CGO_ENABLED=0 go build -v
 FROM alpine:3.7
 RUN apk add --no-cache ca-certificates
 
+CMD ["ls -a"]
 # Copy the binary to the production image from the builder stage.
-COPY --from=builder /app/ggg-cloud-run-demo /server
+COPY --from=builder /app/app /server
 
 # Run the web service on container startup.
 CMD ["/server"]

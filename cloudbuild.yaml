@@ -1,5 +1,5 @@
 steps:
-# # test go
+# test go
 # - name: 'gcr.io/cloud-builders/go:alpine'
 #   args: [
 #        'test'
